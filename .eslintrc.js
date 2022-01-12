@@ -7,6 +7,7 @@ module.exports = {
   parserOptions: { ecmaVersion: 8, sourceType: 'module' },
   ignorePatterns: ['node_modules/*'],
   extends: ['eslint:recommended'],
+  plugins: ['unused-imports'],
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
@@ -61,7 +62,24 @@ module.exports = {
 
         'jsx-a11y/anchor-is-valid': 'off',
 
-        '@typescript-eslint/no-unused-vars': ['warn'],
+        // Auto remove unused imports
+        // https://github.com/sweepline/eslint-plugin-unused-imports
+        '@typescript-eslint/no-unused-vars': 'off',
+        'unused-imports/no-unused-imports': 'warn',
+        'unused-imports/no-unused-vars': [
+          'warn',
+          { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+        ],
+        // Auto remove unused imports
+
+        // Auto sort imports
+        'sort-imports': [
+          'warn',
+          {
+            ignoreDeclarationSort: true,
+          },
+        ],
+        // Auto sort imports
 
         '@typescript-eslint/explicit-function-return-type': ['off'],
         '@typescript-eslint/explicit-module-boundary-types': ['off'],
