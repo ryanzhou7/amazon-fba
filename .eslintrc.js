@@ -47,7 +47,7 @@ module.exports = {
         'react/prop-types': 'off',
 
         'import/order': [
-          'error',
+          'warn',
           {
             groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
             'newlines-between': 'always',
