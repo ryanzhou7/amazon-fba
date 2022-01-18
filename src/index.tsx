@@ -11,6 +11,13 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import 'handsontable/dist/handsontable.full.css';
+
+import { registerAllModules } from 'handsontable/registry';
+
+// register Handsontable's modules
+registerAllModules();
+
 ReactDOM.render(
   <React.StrictMode>
     <CssBaseline />
